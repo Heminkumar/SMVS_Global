@@ -1,0 +1,2 @@
+Run command for store logs in Logs directory
+-> robot --outputdir ..\Logs  Test_login_page.robot
