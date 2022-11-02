@@ -3,12 +3,11 @@ from datetime import datetime
 
 today = datetime.now()
 
-if today.hour < 12:
-    h = "00"
-else:
-    h = "12"
+# Create a directory and join the path
+dir = os.path.join(os.getcwd(),"Logs/Logs_"+today.strftime('%Y_%m_%d_%H_%M'))
 
-dir = os.mkdir("C:\\Users\\hemin.patel\\PycharmProjects\\SMVS_Global\\Logs\\Logs_" + today.strftime('%Y%m%d')+ h)
-os.chdir("C:\\Users\\hemin.patel\\PycharmProjects\\SMVS_Global\\TestCases")
-os.system("robot Test_login_page.robot")
-os.system("mv log.* out* report* .\\Logs\\"+str(dir))
+# change the directory to testcase for execution
+os.chdir("/home/hemin/PycharmProjects/SMVS_Global/TestCases")
+
+# execute robot command and save logs in Logs/ with timestamp
+os.system("robot --outputdir "+ dir +" Test_Login_Page_TCs.robot")
