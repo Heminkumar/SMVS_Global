@@ -1,11 +1,18 @@
 *** Settings ***
 Documentation    Login Functionality
 Library    SeleniumLibrary
-Resource    ../Resources/Generic.robot
+Resource    ../Resources/General.robot
 Resource    ../PageObjects/login_page.robot
 Resource    ../Resources/Generic.robot
+Library    ../Library/sendEmail.py
 
 *** Variables ***
+${SMTP_SERVER}       smtp.gmail.com
+${USER}     hemin patel
+${PASS}
+${mail}     "hemin.patel@volansys.com"
+${subject}      Test Email
+${text}     Test Result
 
 *** Keywords ***
 
@@ -16,5 +23,8 @@ Verify SMVS_Global_page open successfully
     Open SMVS Global URL - Linux
     Enter Credentials for Username and Password
     Click on Sign-in Button
-    #Role Selection Page should be Open after logging
+    Role Selection Page should be Open after loggin
     Close Browser Session
+
+#example mail
+#    send mail no attachment  ${SMTP_SERVER}  ${USER}  ${PASS}  ${mail}  ${subject}  ${text}

@@ -10,4 +10,4 @@ dir = os.path.join(os.getcwd(),"Logs/Logs_"+today.strftime('%Y_%m_%d_%H_%M'))
 os.chdir(os.getcwd()+"/TestCases")
 
 # execute robot command and save logs in Logs/ with timestamp
-os.system("robot --outputdir "+ dir +" Test_Login_Page_TCs.robot")
+os.system("robot --outputdir "+ dir +" Login_Page_Testcase.robot")
