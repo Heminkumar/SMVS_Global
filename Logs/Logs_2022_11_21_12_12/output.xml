@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.7.5 on linux)" generated="20221121 12:12:40.320" rpa="false" schemaversion="3">
+<suite id="s1" name="Login Page Testcase" source="/home/hemin/PycharmProjects/SMVS_Global/TestCases/Login_Page_Testcase.robot">
+<test id="s1-t1" name="Verify Username Error Message" line="20">
+<kw name="Open SMVS Global URL - Linux" library="General">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Global_URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221121 12:12:41.186" level="INFO">Opening browser 'chrome' to base url 'https://smvsweb.azurewebsites.net/UAT'.</msg>
+<status status="PASS" starttime="20221121 12:12:41.185" endtime="20221121 12:13:25.406"/>
+</kw>
+<status status="PASS" starttime="20221121 12:12:41.184" endtime="20221121 12:13:25.407"/>
+</kw>
+<kw name="Enter Credentials for Username and Password" library="login_page">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${Username_field}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20221121 12:13:25.794" level="INFO">Element 'xpath://input[@placeholder="User Name"]' is displayed.</msg>
+<status status="PASS" starttime="20221121 12:13:25.409" endtime="20221121 12:13:25.794"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${Username_field}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20221121 12:13:25.794" endtime="20221121 12:13:26.002"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Username_field}</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221121 12:13:26.003" level="INFO">Typing text 'kjmaniyar' into text field 'xpath://input[@placeholder="User Name"]'.</msg>
+<status status="PASS" starttime="20221121 12:13:26.002" endtime="20221121 12:13:26.475"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${Password_field}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20221121 12:13:26.545" level="INFO">Element 'xpath://input[@placeholder="Password"]' is displayed.</msg>
+<status status="PASS" starttime="20221121 12:13:26.475" endtime="20221121 12:13:26.545"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${Password_field}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20221121 12:13:26.545" endtime="20221121 12:13:26.580"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Password_field}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221121 12:13:26.580" level="INFO">Typing text 'KMGlobal1$' into text field 'xpath://input[@placeholder="Password"]'.</msg>
+<status status="PASS" starttime="20221121 12:13:26.580" endtime="20221121 12:13:26.695"/>
+</kw>
+<status status="PASS" starttime="20221121 12:13:25.408" endtime="20221121 12:13:26.695"/>
+</kw>
+<kw name="Remove Password field data" library="login_page">
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${Password_field}</arg>
+<arg>CTRL+A+DELETE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20221121 12:13:26.697" level="INFO">Sending key(s) ('CTRL+A+DELETE',) to xpath://input[@placeholder="Password"] element.</msg>
+<msg timestamp="20221121 12:13:27.097" level="INFO">Pressing special key CONTROL down.</msg>
+<msg timestamp="20221121 12:13:27.097" level="INFO">Sending key A</msg>
+<msg timestamp="20221121 12:13:27.097" level="INFO">Pressing special key DELETE down.</msg>
+<msg timestamp="20221121 12:13:27.098" level="INFO">Releasing special key CONTROL.</msg>
+<msg timestamp="20221121 12:13:27.098" level="INFO">Releasing special key DELETE.</msg>
+<status status="PASS" starttime="20221121 12:13:26.696" endtime="20221121 12:13:27.229"/>
+</kw>
+<status status="PASS" starttime="20221121 12:13:26.696" endtime="20221121 12:13:27.229"/>
+</kw>
+<kw name="Click on Sign-in Button" library="login_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Login_Button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221121 12:13:27.232" level="INFO">Clicking element 'xpath://button[@class='btn btn-primary full-width']'.</msg>
+<status status="PASS" starttime="20221121 12:13:27.231" endtime="20221121 12:13:27.521"/>
+</kw>
+<status status="PASS" starttime="20221121 12:13:27.230" endtime="20221121 12:13:27.522"/>
+</kw>
+<kw name="Error message for Password" library="login_page">
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<var>${value}</var>
+<arg>${password_field_error_message}</arg>
+<arg>Password is mandatory.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221121 12:13:27.526" level="INFO">Verifying element 'css:div#class="messages text-danger error text-left ng-star-inserted"' contains exact text 'Password is mandatory.'.</msg>
+<msg timestamp="20221121 12:13:27.979" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20221121 12:13:27.979" level="FAIL">InvalidSelectorException: Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=107.0.5304.110)
+Stacktrace:
+#0 0x562d6b5d5503 &lt;unknown&gt;
+#1 0x562d6b350961 &lt;unknown&gt;
+#2 0x562d6b353fc0 &lt;unknown&gt;
+#3 0x562d6b353d9f &lt;unknown&gt;
+#4 0x562d6b354097 &lt;unknown&gt;
+#5 0x562d6b38cff2 &lt;unknown&gt;
+#6 0x562d6b38d591 &lt;unknown&gt;
+#7 0x562d6b3ca201 &lt;unknown&gt;
+#8 0x562d6b3ae9ad &lt;unknown&gt;
+#9 0x562d6b3c7ddc &lt;unknown&gt;
+#10 0x562d6b3aece3 &lt;unknown&gt;
+#11 0x562d6b380561 &lt;unknown&gt;
+#12 0x562d6b381be1 &lt;unknown&gt;
+#13 0x562d6b652900 &lt;unknown&gt;
+#14 0x562d6b60d919 &lt;unknown&gt;
+#15 0x562d6b60d370 &lt;unknown&gt;
+#16 0x562d6b60e0c5 &lt;unknown&gt;
+#17 0x562d6b64e4cb &lt;unknown&gt;
+#18 0x562d6b60e42e &lt;unknown&gt;
+#19 0x562d6b5efe37 &lt;unknown&gt;
+#20 0x562d6b618f88 &lt;unknown&gt;
+#21 0x562d6b619129 &lt;unknown&gt;
+#22 0x562d6b631440 &lt;unknown&gt;
+#23 0x7f87ebe126db start_thread
+</msg>
+<status status="FAIL" starttime="20221121 12:13:27.524" endtime="20221121 12:13:28.036"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20221121 12:13:28.037" endtime="20221121 12:13:28.037"/>
+</kw>
+<status status="FAIL" starttime="20221121 12:13:27.523" endtime="20221121 12:13:28.038"/>
+</kw>
+<kw name="Close Browser Session" library="General">
+<status status="NOT RUN" starttime="20221121 12:13:28.038" endtime="20221121 12:13:28.039"/>
+</kw>
+<doc>TC-1:- Validate login functionality</doc>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20221121 12:12:41.181" endtime="20221121 12:13:28.039">InvalidSelectorException: Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=107.0.5304.110)
+Stacktrace:
+#0 0x562d6b5d5503 &lt;unknown&gt;
+#1 0x562d6b350961 &lt;unknown&gt;
+#2 0x562d6b353fc0 &lt;unknown&gt;
+#3 0x562d6b353d9f &lt;unknown&gt;
+#4 0x562d6b354097 &lt;unknown&gt;
+#5 0x562d6b38cff2 &lt;unknown&gt;
+#6 0x562d6b38d591 &lt;unknown&gt;
+#7 0x562d6b3ca201 &lt;unknown&gt;
+#8 0x562d6b3ae9ad &lt;unknown&gt;
+#9 0x562d6b3c7ddc &lt;unknown&gt;
+#10 0x562d6b3aece3 &lt;unknown&gt;
+#11 0x562d6b380561 &lt;unknown&gt;
+#12 0x562d6b381be1 &lt;unknown&gt;
+#13 0x562d6b652900 &lt;unknown&gt;
+#14 0x562d6b60d919 &lt;unknown&gt;
+#15 0x562d6b60d370 &lt;unknown&gt;
+#16 0x562d6b60e0c5 &lt;unknown&gt;
+#17 0x562d6b64e4cb &lt;unknown&gt;
+#18 0x562d6b60e42e &lt;unknown&gt;
+#19 0x562d6b5efe37 &lt;unknown&gt;
+#20 0x562d6b618f88 &lt;unknown&gt;
+#21 0x562d6b619129 &lt;unknown&gt;
+#22 0x562d6b631440 &lt;unknown&gt;
+#23 0x7f87ebe126db start_thread
+</status>
+</test>
+<test id="s1-t2" name="Verify SMVS_Global_page open successfully" line="30">
+<kw name="Open SMVS Global URL - Linux" library="General">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Global_URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221121 12:13:28.043" level="INFO">Opening browser 'chrome' to base url 'https://smvsweb.azurewebsites.net/UAT'.</msg>
+<status status="PASS" starttime="20221121 12:13:28.042" endtime="20221121 12:13:38.714"/>
+</kw>
+<status status="PASS" starttime="20221121 12:13:28.042" endtime="20221121 12:13:38.715"/>
+</kw>
+<kw name="Enter Credentials for Username and Password" library="login_page">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${Username_field}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20221121 12:13:38.789" level="INFO">Element 'xpath://input[@placeholder="User Name"]' is displayed.</msg>
+<status status="PASS" starttime="20221121 12:13:38.719" endtime="20221121 12:13:38.789"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${Username_field}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20221121 12:13:38.789" endtime="20221121 12:13:38.844"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Username_field}</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221121 12:13:38.845" level="INFO">Typing text 'kjmaniyar' into text field 'xpath://input[@placeholder="User Name"]'.</msg>
+<status status="PASS" starttime="20221121 12:13:38.844" endtime="20221121 12:13:38.951"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${Password_field}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20221121 12:13:38.978" level="INFO">Element 'xpath://input[@placeholder="Password"]' is displayed.</msg>
+<status status="PASS" starttime="20221121 12:13:38.951" endtime="20221121 12:13:38.978"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${Password_field}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20221121 12:13:38.979" endtime="20221121 12:13:39.002"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Password_field}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221121 12:13:39.002" level="INFO">Typing text 'KMGlobal1$' into text field 'xpath://input[@placeholder="Password"]'.</msg>
+<status status="PASS" starttime="20221121 12:13:39.002" endtime="20221121 12:13:39.097"/>
+</kw>
+<status status="PASS" starttime="20221121 12:13:38.717" endtime="20221121 12:13:39.098"/>
+</kw>
+<kw name="Click on Sign-in Button" library="login_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Login_Button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221121 12:13:39.099" level="INFO">Clicking element 'xpath://button[@class='btn btn-primary full-width']'.</msg>
+<status status="PASS" starttime="20221121 12:13:39.098" endtime="20221121 12:13:39.297"/>
+</kw>
+<status status="PASS" starttime="20221121 12:13:39.098" endtime="20221121 12:13:39.297"/>
+</kw>
+<kw name="Role Selection Page should be Open after loggin" library="login_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Role_Selection_text}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221121 12:13:39.298" endtime="20221121 12:13:40.743"/>
+</kw>
+<status status="PASS" starttime="20221121 12:13:39.297" endtime="20221121 12:13:40.744"/>
+</kw>
+<kw name="Close Browser Session" library="General">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221121 12:13:40.744" endtime="20221121 12:13:41.174"/>
+</kw>
+<status status="PASS" starttime="20221121 12:13:40.744" endtime="20221121 12:13:41.175"/>
+</kw>
+<doc>TC-2:- Validate login functionality</doc>
+<tag>Sanity</tag>
+<status status="PASS" starttime="20221121 12:13:28.041" endtime="20221121 12:13:41.177"/>
+</test>
+<doc>Login Functionality</doc>
+<status status="FAIL" starttime="20221121 12:12:40.323" endtime="20221121 12:13:41.181"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="1" skip="0">Sanity</stat>
+</tag>
+<suite>
+<stat pass="1" fail="1" skip="0" id="s1" name="Login Page Testcase">Login Page Testcase</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

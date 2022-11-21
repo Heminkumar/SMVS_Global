@@ -3,7 +3,7 @@ Documentation    Login Functionality
 Library    SeleniumLibrary
 Resource    ../Resources/General.robot
 Resource    ../PageObjects/login_page.robot
-Resource    ../Resources/Generic.robot
+Resource    ../Resources/General.robot
 Library    ../Library/sendEmail.py
 
 *** Variables ***
@@ -17,8 +17,28 @@ ${text}     Test Result
 *** Keywords ***
 
 *** Test Cases ***
+Verify Username Error Message
+    #[Documentation]     TC-1:- Validate login functionality
+    [Tags]      Sanity
+    Open SMVS Global URL - Linux
+    Enter Credentials for Username and Password
+    Remove Username field data
+    Click on Sign-in Button
+    Error message for Username
+    Close Browser Session
+
+Verify Password Error Message
+    #[Documentation]     TC-2:- Validate login functionality
+    [Tags]      Sanity
+    Open SMVS Global URL - Linux
+    Enter Credentials for Username and Password
+    Remove Password field data
+    Click on Sign-in Button
+    Error message for Password
+    Close Browser Session
+
 Verify SMVS_Global_page open successfully
-    [Documentation]     TC-1:- Validate login functionality
+    #[Documentation]     TC-3:- Validate login functionality
     [Tags]      Sanity
     Open SMVS Global URL - Linux
     Enter Credentials for Username and Password
